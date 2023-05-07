@@ -1,13 +1,13 @@
 // shape..shape color.. text.. text color
-const inqurier = require('inquirer')
+const inquirer = require('inquirer')
 const fs = require('fs')
-const Shape = require('./lib/shape')
-const template = require('./src/template')
+const {Triangle, Circle, Square} = require('./lib/shape')
+const LogoSVG = require('./utils/SVG')
 
-inqurier.prompt([
+inquirer.prompt([
     {
         type: "list",
-        name: 'shape',
+        name: 'userShape',
         message: 'Choose a shape',
         choices: ["circle", "triangle", "square"]
     },
@@ -27,8 +27,25 @@ inqurier.prompt([
         message: 'What color would you like the text to be?',
     },
 ]).then(answers => {
-    const shape = new Shape(answers.shape, answers.shapeColor, answers.text, answers.textColor)
-    fs.writeFile('logo.html', template(shape), (err) => {
+    let shape;
+    if (answers.userShape === "circle") {
+        shape = new Circle()
+    } else if(answers.userShape === "triangle") {
+        shape = new Triangle()
+    } else {
+        shape = new Square()
+    }
+
+    shape.setColor(answers.shapeColor);
+
+    let svg = new LogoSVG();
+    svg.putShape(shape)
+    svg.putText(answers.textColor, answers.text)
+
+
+    return fs.writeFile('logo.svg', svg.render(), (err) =>
+    
+    {
         if (err) throw err;
         console.log("Logo Created!")
     })

@@ -1,15 +1,21 @@
-# SVG-Logo-Maker
-# 10 Object-oriented Programming: SVG Logo Maker
+# Object-oriented Programming: SVG Logo Maker
 
-## Your Task
+## Description
 
-Your task is to build a Node.js command-line application that takes in user input to generate a logo and save it as an [SVG file](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics). The application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a `.svg` file.
+This application gives freelance developers a way to create simple logos for their projects.  It utilizes inquirer to prompt the user input like color, shape and text for logo and generates SVG logo to a `.svg` file.
 
-Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and passes all of the tests. You’ll need to submit a link to the video **and** add it to the README of your project.
+## Table of Contents:
+- [Overview](#Overview)
+- [The Challenge](#The-Challenge)
+- [Usage Information](#Usage-Information)
+- [Installation Process](#Installation-Process)
+- [What I Learned](#What-I-Learned)
+- [License](#License)
+- [Author](#Author)
+- [Acknowledgments](#Acknowledgments)
 
-Refer to the [Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) on the Full-Stack Blog for additional guidance on creating a video.
 
-> **Note**: There is no starter code for this assignment.
+>
 ### User Story
 
 ```md
@@ -84,7 +90,8 @@ expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill=
 ```
 
 You may need to add additional files in the `lib` folder for handling user input, writing to a file, etc. Writing tests for these additional files is **optional**.
-
+## Images
+Circle.png
 ## Helpful SVG Resources
 
 * [Example SVG](https://static.fullstack-bootcamp.com/fullstack-ground/module-10/circle.svg)
@@ -164,5 +171,6 @@ You are required to submit the following for review:
 
 * The URL of the GitHub repository, with a unique name and a README describing the project.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [Open Source Initiative Link](https://opensource.org/licenses/MIT)
 ---
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
